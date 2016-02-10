@@ -1,3 +1,4 @@
+//package controller;
 import java.util.*;
 
 /**
@@ -25,10 +26,14 @@ public class Crap {
         int lRate = Integer.parseInt(stats[6]);
         int mRate = Integer.parseInt(stats[7]);
         String out = "";
-        if(lRate > cRate){
-            out = out + "I";
-        }else{
-            out = out + "E";
+        if(round == 1){
+            out = out + "B";
+        }else {
+            if (lRate > cRate) {
+                out = out + "I";
+            } else {
+                out = out + "E";
+            }
         }
         out = out + "C";
         out = out + "M";
