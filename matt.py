@@ -42,7 +42,7 @@ def apply_rules(stats):
 
 def score(stats):
     # print("Scoring", stats["healthy"], stats["infected"])
-    return -2*stats["healthy"] + 1.5*stats["infected"]
+    return 1*stats["healthy"] + 0.5*stats["infected"]
 
 def reproduce(stats):
     stats["healthy"] += stats["healthy"] // 2

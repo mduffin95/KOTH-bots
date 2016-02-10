@@ -4,29 +4,29 @@ import random
 
 args = argv[1].split(";")
 
-# N: Do Nothing 
-# M: Research Microbiology [Effects: Reduce local Infection Rate by 4] 
-# E: Research Epidemiology [Effects: Reduce local Contagion Rate by 8%] 
-# I: Research Immunology [Effects: Reduce local Lethality Rate by 4%] 
-# V: Research Vaccination [Effects: Reduce local Infection Rate by one, reduce local Contagion Rate by 4%, reduce local Lethality Rate by 2%] 
-# C: Give Cure [Effects: Convert 10 local Infected to Healthy] 
-# Q: Quarantine [Effects: Remove 30 local Infected] 
-# O: Open Borders [Effects: Increase local Migration Rate by 10%] 
-# B: Close Borders [Effects: Decrease local Migration Rate by 10%] 
-# T: BioTerrorism [Effects: Convert 4 global Healthy to Infected] 
-# W: Weaponization [Effects: Increase global Infection Rate by 1, increase global Lethality Rate by 2%] 
-# D: Dissemination [Effects: Increase global Infection Rate by 1, increase global Contagion Rate by 2%] 
-# P: Pacification [Effects: Decrease global Infection Rate by 1, decrease global Contagion Rate by 1%, decrease global Lethality Rate by 1%] 
+# N: Do Nothing
+# M: Research Microbiology [Effects: Reduce local Infection Rate by 4]
+# E: Research Epidemiology [Effects: Reduce local Contagion Rate by 8%]
+# I: Research Immunology [Effects: Reduce local Lethality Rate by 4%]
+# V: Research Vaccination [Effects: Reduce local Infection Rate by one, reduce local Contagion Rate by 4%, reduce local Lethality Rate by 2%]
+# C: Give Cure [Effects: Convert 10 local Infected to Healthy]
+# Q: Quarantine [Effects: Remove 30 local Infected]
+# O: Open Borders [Effects: Increase local Migration Rate by 10%]
+# B: Close Borders [Effects: Decrease local Migration Rate by 10%]
+# T: BioTerrorism [Effects: Convert 4 global Healthy to Infected]
+# W: Weaponization [Effects: Increase global Infection Rate by 1, increase global Lethality Rate by 2%]
+# D: Dissemination [Effects: Increase global Infection Rate by 1, increase global Contagion Rate by 2%]
+# P: Pacification [Effects: Decrease global Infection Rate by 1, decrease global Contagion Rate by 1%, decrease global Lethality Rate by 1%]
 
-# Healthy: People not infected 
-# Infected: People who can die from the pandemic 
-# Dead: Body count, no particular effect (only scoring) 
-# Infection Rate: Number of Healthy who will become Infected each turn 
-# Contagion Rate: Percentage of Infected that will convert Healthy to Infected each turn 
-# Lethality Rate: Percentage of Infected that will die each turn 
+# Healthy: People not infected
+# Infected: People who can die from the pandemic
+# Dead: Body count, no particular effect (only scoring)
+# Infection Rate: Number of Healthy who will become Infected each turn
+# Contagion Rate: Percentage of Infected that will convert Healthy to Infected each turn
+# Lethality Rate: Percentage of Infected that will die each turn
 # Migration Rate: Percentage of both Healthy and Infected that will emigrate/immigrate each turn
-# Local: Affects only your state 
-# Global: Affects every state
+# Local: Affects only your state
+# Global: Affects every state6;1;3_143_6_0_0_0_8_5;1_142_5_1_0_0_20_5;0_118_20_10_4_20_20_5;4_119_20_10_4_20_20_5;2_118_20_10_4_20_20_5
 
 n = int(args[0])
 pid = int(args[1])
@@ -52,5 +52,3 @@ for p in args[2:]:
             print("CQQ")
           else:
             print("CEQ")
-
-
