@@ -38,17 +38,16 @@ public class Crap {
         }
         out = out + "C";
         out = out + "M";
+        System.out.println(out);
         try {
             String req = "http://192.168.0.24:8080/?healthy=" + healthy + "&infected=" + infected + "&dead=" + dead;
             URL url = new URL(req);
             URLConnection uc = url.openConnection();
             //uc.setRequestProperty("stats",  Arrays.toString(stats));
-            //uc.getInputStream();
+            uc.getInputStream();
         }catch(Exception e){
             System.err.println(e);
         }
-        System.out.println(out);
-
 
         return;
     }
