@@ -1,5 +1,6 @@
 # Parsing code
 from sys import argv
+import sys
 from numpy.random import choice
 
 args = argv[1].split(";")
