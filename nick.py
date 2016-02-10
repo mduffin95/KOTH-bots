@@ -26,7 +26,7 @@ for i in range(0,3):
         result.append("C")
         me["healthy"] = me["healthy"] + 10
         me["infected"] = me["infected"] - 10
-    elif(me["contagion"] > 20):
+    elif(me["contagion"] > 14):
         result.append("E")
         me["contagion"] = me["contagion"] - 8
     elif(me["infection"] > 10):
