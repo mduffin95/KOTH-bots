@@ -14,7 +14,7 @@ for p in args[2:]:
         me = players[-1]
 
 if(n == 1):
-    print("BME")
+    print("BDD")
     sys.exit(0)
 
 result = []
@@ -26,7 +26,15 @@ for i in range(0,3):
         result.append("C")
         me["healthy"] = me["healthy"] + 10
         me["infected"] = me["infected"] - 10
-    else:
+    elif(me["contagion"] > 20):
+        result.append("E")
+    elif(me["infection"] > 10):
+        result.append("M")
+    elif(me["lethality"] > 10):
+        result.append("I")
+    elif(me["contagion"] > 5):
         result.append("V")
+    else:
+        result.append("D")
 
 print(result[0] + result[1] + result[2])
