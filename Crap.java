@@ -43,7 +43,7 @@ public class Crap {
             URL url = new URL(req);
             URLConnection uc = url.openConnection();
             //uc.setRequestProperty("stats",  Arrays.toString(stats));
-            uc.getInputStream();
+            //uc.getInputStream();
         }catch(Exception e){
             System.err.println(e);
         }
