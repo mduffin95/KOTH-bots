@@ -17,7 +17,7 @@ if(n == 1):
     sys.exit(0)
 
 result = []
-for(i in range(0,3)):
+for i in range(0,3):
     if(me["infected"] > 40 and me["healthy"] > me["migration"] * 5):
         result.append("Q")
         me["infected"] = me["infected"]-30
