@@ -28,13 +28,21 @@ for i in range(0,3):
         me["infected"] = me["infected"] - 10
     elif(me["contagion"] > 20):
         result.append("E")
+        me["contagion"] = me["contagion"] - 8
     elif(me["infection"] > 10):
         result.append("M")
+        me["infection"] = me["infection"] - 4
     elif(me["lethality"] > 10):
         result.append("I")
+        me["lethality"] = me["lethality"] - 4
     elif(me["contagion"] > 5):
         result.append("V")
+        me["contagion"] = me["contagion"] - 4
+        me["lethality"] = me["lethality"] - 2
+        me["infection"] = me["infection"] - 1
     else:
         result.append("D")
+        me["infection"] = me["infection"] + 1
+        me["contagion"] = me["contagion"] + 2
 
 print(result[0] + result[1] + result[2])
