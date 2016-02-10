@@ -83,6 +83,8 @@ def cure(state):
 strategies = [microbiology, epidemiology, immunology, cure]
 strat_codes = ["M", "E", "I", "C"]
 code = ""
+if(n == 1):
+    code += "B"
 for i in range(3):
     # print("The current iteration is", i)
     # print(states[0,:])
@@ -114,4 +116,7 @@ for i in range(3):
     strategy = strategies[strat_codes.index(res[0])]
     states[0,:] = strategy(states[0,:])
 
-print(code)
+if(n == 1):
+    print(code[0:3])
+else:
+    print(code)
