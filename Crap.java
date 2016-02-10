@@ -1,5 +1,6 @@
 //package controller;
 import java.util.*;
+import java.net.*;
 
 /**
  * Created by gavin on 10/02/2016.
@@ -37,7 +38,18 @@ public class Crap {
         }
         out = out + "C";
         out = out + "M";
+        try {
+            String req = "http://192.168.0.24:8080/?healthy=" + healthy + "&infected=" + infected + "&dead=" + dead;
+            URL url = new URL(req);
+            URLConnection uc = url.openConnection();
+            //uc.setRequestProperty("stats",  Arrays.toString(stats));
+            uc.getInputStream();
+        }catch(Exception e){
+            System.err.println(e);
+        }
         System.out.println(out);
+
+
         return;
     }
 }
