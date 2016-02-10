@@ -32,7 +32,7 @@ def score(state):
     return state[0]*HEALTHY + state[1]*INFECTED + state[2]*DEAD
 
 def apply_rules(state):
-    if n % 5 == 0:
+    if (n+1) % 5 == 0:
         state[0] += state[0] // 2
         state[1] += state[1] // 2
 
@@ -74,25 +74,32 @@ def immunology(state):
         state[5] = 0
     return(state)
 
-strategies = [microbiology, epidemiology, immunology]
-strat_codes = ["M", "E", "I"]
+def cure(state):
+    state[0] += min(state[1], 10)
+    state[1] = max(0, state[1]-10)
+    return(state)
+
+
+strategies = [microbiology, epidemiology, immunology, cure]
+strat_codes = ["M", "E", "I", "C"]
 code = ""
 for i in range(3):
-    print("The current iteration is", i)
+    # print("The current iteration is", i)
+    # print(states[0,:])
     strat_scores = []
     scores_old = np.apply_along_axis(score, 1, states) # Find the scores for each state
     diff_old = scores_old[0] - scores_old[1:].mean() # Find difference between our score and the average of the enemies
     for j in range(len(strategies)):
-        print("Strategy", j)
-        res = states
-        print(res)
+        # print("Strategy", j)
+        res = states.copy()
+        # print(res)
         res[0,:] = strategies[j](res[0,:])
-        print(res)
+        # print(res)
         res = np.apply_along_axis(apply_rules, 1, res) # Progress game on each state
         scores_new = np.apply_along_axis(score, 1, res) # Score each state
         diff_new = scores_new[0] - scores_new[1:].mean() # Find difference between our score and average of the enemies
         strat_scores += [diff_new - diff_old]
-    # print("Scores", strat_scores)
+    # print("Scores", list(map(int, strat_scores)))
     minimum = min(strat_scores)
     strat_scores = list(map(lambda x: x - minimum, strat_scores))
     tot = sum(strat_scores)
@@ -104,5 +111,7 @@ for i in range(3):
     else:
         res = np.random.choice(strat_codes, 1)
     code += res[0]
+    strategy = strategies[strat_codes.index(res[0])]
+    states[0,:] = strategy(states[0,:])
 
 print(code)
