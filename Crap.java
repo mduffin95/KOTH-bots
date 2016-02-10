@@ -1,4 +1,3 @@
-package controller;
 import java.util.*;
 
 /**
@@ -33,8 +32,7 @@ public class Crap {
         }
         out = out + "C";
         out = out + "M";
-
-
         System.out.println(out);
+        return;
     }
 }
