@@ -1,12 +1,20 @@
 //package controller;
 import java.util.*;
 import java.net.*;
+import java.util.Timer;
 
 /**
  * Created by gavin on 10/02/2016.
  */
 public class Crap {
     public static void main(String[] args){
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                System.exit(1);
+            }
+        }, 1000);
         args = args[0].split(";");
         int round = Integer.parseInt(args[0]);
         String playerId = args[1];
@@ -45,6 +53,7 @@ public class Crap {
             URLConnection uc = url.openConnection();
             //uc.setRequestProperty("stats",  Arrays.toString(stats));
             uc.getInputStream();
+            return;
         }catch(Exception e){
             System.err.println(e);
         }
