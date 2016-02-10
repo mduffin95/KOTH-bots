@@ -6,10 +6,21 @@ import java.util.*;
  */
 public class Crap {
     public static void main(String[] args){
-        //String newArgs[] = args[0].split(";");
-        //int round = Integer.parseInt(newArgs[0]);
+        args = args[0].split(";");
+        int round = Integer.parseInt(args[0]);
+        String playerId = args[1];
+        String[] stats;
+        for(int i=2;i < args.length;i++){
+            String[] playerArgs = args[i].split("_");
+            String id = playerArgs[0];
+            if(id.equals(playerId)){
+                stats = playerArgs;
+                System.err.println(args[i]);
+            }
+        }
 
 
-        System.out.println("N");
+
+        System.out.println("NNN");
     }
 }
